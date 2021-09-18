@@ -16,8 +16,8 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
-repo_url: https://github.com/example/example-repo
-repo_name: example/example-repo
+repo_url: https://github.com/TheNoobInventor/arduino-gimbal
+repo_name: TheNoobInventor/arduino-gimbal
 plugins:
   - search:
       lang: en
