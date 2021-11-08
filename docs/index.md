@@ -18,6 +18,8 @@ Software used
 ### Software install
 how to download and run the code
 
+MPU6050 library used can be installed from Arduino IDE...using the one by Electronic Cats
+
 ## Video demonstration
 
 ## Observations
@@ -26,6 +28,3 @@ how to download and run the code
 
 ## References
 Libraries:
-
-https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/I2Cdev
-https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/MPU6050
