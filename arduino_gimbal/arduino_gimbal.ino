@@ -1,6 +1,6 @@
 /* 
  * Arduino Nano + 3 servo90 (confirm this) motors + MPU6050
- * ...
+ * 
  * 
  * 
  */
