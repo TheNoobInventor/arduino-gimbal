@@ -1,5 +1,5 @@
 site_name: Diy Arduino Gimbal
-site_url: ''
+site_url: 'https://thenoobinventor.github.io/arduino-gimbal/'
 use_directory_urls: False
 edit_uri: ""
 
@@ -16,6 +16,12 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - toc.integrate
 repo_url: https://github.com/TheNoobInventor/arduino-gimbal
 repo_name: TheNoobInventor/arduino-gimbal
 plugins:
