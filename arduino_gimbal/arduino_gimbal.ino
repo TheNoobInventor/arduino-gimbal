@@ -1,12 +1,7 @@
 /* 
-<<<<<<< HEAD
  * A 3D printed DIY gimbal - fitted with 3 FS90 Micro servo motors - is controlled using an MPU6050 
  * inertial measurement unit (IMU) sensor in order to keep 3D printed platform stable during rotation in 
  * any axis. 
-=======
- * Arduino Nano + 3 servo90 (confirm this) motors + MPU6050
- * 
->>>>>>> b68a4675e36fb2ab535b0e128afabe0355ea8a3d
  * 
  * All of these components are connected to an Arduino Nano and powered via a 9V battery - stepped down 
  * to 5V using a buck converter.
@@ -47,10 +42,10 @@ Servo servoRoll;
 
 void setup() {
     Wire.begin();
-    Wire.setClock(400000); // 400kHz I2C clock. Comment this line if having compilation difficulties
+    Wire.setClock(400000); 
    
     // initialize serial communication
-    Serial.begin(38400);//
+    Serial.begin(38400);
 
     // Initialize device
     Serial.println(F("Initializing I2C devices..."));
@@ -141,12 +136,4 @@ void loop() {
         servoPitch.write(pitchValue);
         servoRoll.write(rollValue);
     }
-<<<<<<< HEAD
 }
-=======
-      
-    ypr[0] = ypr[0] - correct[0];
-    ypr[1] = ypr[1] - correct[1];
-    ypr[2] = ypr[2] - correct[2];
-  }  
->>>>>>> b68a4675e36fb2ab535b0e128afabe0355ea8a3d
