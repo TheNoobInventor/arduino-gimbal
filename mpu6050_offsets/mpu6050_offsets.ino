@@ -1,4 +1,4 @@
-// Adapted from MPU6050_raw example file to generate offsets required to calibrate the MPU6050.
+// Adapted from MPU6050_raw example file to generate offsets required to calibrate the MPU6050. 
 
 #include "I2Cdev.h"
 #include "MPU6050.h"

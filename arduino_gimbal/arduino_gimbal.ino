@@ -115,7 +115,7 @@ void loop() {
   if (!dmpReady) return;
   
   // Read a packet from FIFO
-  if (accelgyro.dmpGetCurrentFIFOPacket(fifoBuffer)) { // Get the Latest packet 
+  if (accelgyro.dmpGetCurrentFIFOPacket(fifoBuffer)) { // Get the Latest packet
     
     // Display Euler angles in degrees
     accelgyro.dmpGetQuaternion(&q, fifoBuffer);
