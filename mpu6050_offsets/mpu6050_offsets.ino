@@ -36,13 +36,13 @@ void setup() {
   accelgyro.initialize();
 
   // Minor delay to allow the device to be fully setup.
-  delay(100);
+  delay(500);
 
   // Verify connection
   Serial.println("Testing device connections...");
   Serial.println(accelgyro.testConnection() ? "MPU6050 connection successful" : "MPU6050 connection failed");
 
-  // Set the offset values of ax, ay, az, gx, gy and gz to the initial values of calculatedOffset array.
+  // Set the offset values of ax, ay, az, gx, gy and gz to the initial values of the calculatedOffset array.
   setOffsetValues();
 
   // Calculate sensor offsets
