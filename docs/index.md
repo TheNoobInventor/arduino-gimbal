@@ -2,6 +2,8 @@
 
 A 3D printed do-it-yourself (DIY) gimbal - fitted with 3 FS90 Micro servo motors - is controlled using an MPU6050 inertial measurement unit (IMU) sensor in order to keep the 3D printed platform stable during rotation in any axis. The servo motors and the IMU sensor are connected to the Arduino Nano microcontroller.
 
+(To be completed)
+
 ## Hardware
 
 ### Components
