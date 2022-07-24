@@ -59,7 +59,7 @@ The MPU6050 board pins were connected to the pins of the Nano as follows:
 | SDA         | A4 |
 | INT         | D2 |
 
-The pair of analog pins, A4 and A5, on the Nano are usually used for I2C communications according to the board pinout schematics. Hence, pins A4 and A5 are connected to SDA and SCL on the MPU6050 module respectively.
+The pair of analog pins, A4 and A5, on the Nano are usually used for I2C communications according to the board pinout schematics. Hence, pins A4 and A5 are connected to SDA and SCL on the MPU6050 module respectively. The external interrupt pin of the MPU6050 is connected to the D2 digital Nano pin.
 
 The signal cable of the servo motors are connected to the Nano as follows:
 
@@ -85,7 +85,7 @@ An extra row of headers was attached for debugging power and ground connections.
   <img src=images/boards_closeup.png width="600">
 </p>
 
-The black and red wires shown are connected to the ground and the voltage output from the buck regulator. The idea behind this connection and assembly is again attributed to [Make It Smart](https://www.youtube.com/watch?v=1aRJvid5Ib4. The servos are attached to the servo housings with screws, the double sided tape is used to attach the breadboard securely in the gimbal body, and the duck tape is used to insulate connections from possible short circuits. 
+The black and red wires shown are connected to the ground and the voltage output from the buck regulator. The idea behind this connection and assembly is again attributed to [Make It Smart](https://www.youtube.com/watch?v=1aRJvid5Ib4). The servos are attached to the servo housings with screws, the double sided tape is used to attach the breadboard securely in the gimbal body, and the duck tape is used to insulate connections from possible short circuits. 
 
 The fully assembled gimbal is shown in the pictures below.
 
@@ -95,41 +95,36 @@ The fully assembled gimbal is shown in the pictures below.
   <img src=images/assembled_top.png width="600">
 </p>
 
-## Software
+## Software and libraries used
+The [Arduino IDE](https://www.arduino.cc/en/software) is used in programming this project. The [i2cdevlib](https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/I2Cdev) and [MPU6050](https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/MPU6050) libraries by Jeff Rowberg were also used herein. These libraries can be installed by importing them into the Arduino IDE as explained in the [README](https://github.com/jrowberg/i2cdevlib) of the repository; this [guide](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries) can also be instructional for the installation process.
 
-### Software architecture
-Software used
-Arduino IDE
+## I2C
 
-### Software install
-how to download and run the code
-
-libraries used
-
-crediting someone?
 
 ## MPU6050
-i2c
-specs?
+
 
 ### MPU6050 Calibrations
 
-Screenshots of serial monitor?
 
-## 'Working principle/demo'
+### Sketch Upload
 
-### Video demonstration
+<p float="center">
+  <img src=images/sketch_upload.png width="600">
+</p>
+
+## Working principle
+
+## Video demonstration
 
 ## Observations
 
-Was challenging fitting in all the parts but was possible. 
-
-Mention that we have an stl directory in this repo for the files.
-
 ## Future work/suggestions
 - Smaller voltage regulator
-- Use a smaller battery, 7.4v lipo battery for eg
-- connect directly to Vin?
+- Use a smaller battery
+- connect directly to Vin
 
 ## References
 Libraries:
+
+Additional information on i2cdevlib https://www.i2cdevlib.com
