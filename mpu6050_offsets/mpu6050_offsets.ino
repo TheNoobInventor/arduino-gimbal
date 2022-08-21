@@ -89,7 +89,7 @@ void calculateOffsets(){
   // Read raw accel/gyro measurements from device
   accelgyro.getMotion6(&rawValue[0], &rawValue[1], &rawValue[2], &rawValue[3], &rawValue[4], &rawValue[5]);
 
-  // Sum raw sensor values over 30 readings; 30 was chosen so that the total obtained is within the short int range.
+  // Sum raw sensor values over 30 readings; 30 was chosen so that the total obtained is in the short int (int16_t) range.
   if(counter < 30){
     for(int i = 0; i<6; i++){
       totalRawValue[i] = totalRawValue[i] + rawValue[i];
