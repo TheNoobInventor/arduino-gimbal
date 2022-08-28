@@ -13,21 +13,22 @@
 #include "Wire.h"
 #include <Servo.h>
 
-// MPU control/status vars
-bool dmpReady = false;  // set true if DMP init was successful
-uint8_t mpuIntStatus;   // holds actual interrupt status byte from MPU
-uint8_t devStatus;      // return status after each device operation (0 = success, !0 = error)
-uint16_t packetSize;    // expected DMP packet size (default is 42 bytes)
-uint16_t fifoCount;     // count of all bytes currently in FIFO
+// MPU control/status variables
+bool dmpReady = false;  // Set true if DMP init was successful
+uint8_t mpuIntStatus;   // Holds actual interrupt status byte from MPU
+uint8_t devStatus;      // Return status after each device operation (0 = success, !0 = error)
+uint16_t packetSize;    // Expected DMP packet size (default is 42 bytes)
+uint16_t fifoCount;     // Count of all bytes currently in FIFO
 uint8_t fifoBuffer[64]; // FIFO storage buffer
+int16_t rawValue[6];    // Raw sensor values for accelerometer and gyroscope for each axis: {ax, ay, az, gx, gy, gz}
 
-// Orientation/motion vars
-Quaternion q;           // [w, x, y, z]         quaternion container
-VectorFloat gravity;    // [x, y, z]            gravity vector
-float ypr[3];           // [yaw, pitch, roll]   yaw/pitch/roll container and gravity vector
+// Orientation/motion variables
+Quaternion q;           // [w, x, y, z]         Quaternion container
+VectorFloat gravity;    // [x, y, z]            Gravity vector
+float ypr[3];           // [yaw, pitch, roll]   Yaw/pitch/roll container and gravity vector
 
 // Interrupt detection routine
-volatile bool mpuInterrupt = false;  // indicates whether MPU interrupt pin has gone high
+volatile bool mpuInterrupt = false;  // Indicates whether MPU interrupt pin has gone high
 void dmpDataReady() {
     mpuInterrupt = true;
 }
@@ -63,10 +64,10 @@ void setup() {
   devStatus = accelgyro.dmpInitialize();
 
   // Set device offsets obtained from mpu6050_offsets.ino sketch
-  accelgyro.setXGyroOffset(-203);
-  accelgyro.setYGyroOffset(-95); 
-  accelgyro.setZGyroOffset(-48); 
-  accelgyro.setZAccelOffset(1933); 
+  accelgyro.setXGyroOffset(-203);//-203
+  accelgyro.setYGyroOffset(-95); //-95
+  accelgyro.setZGyroOffset(-48); //-48
+  accelgyro.setZAccelOffset(1933); //1933
   
   // Make sure it worked (returns 0 if so)
   if (devStatus == 0) {
@@ -114,20 +115,40 @@ void loop() {
   // If programming failed, don't try to do anything
   if (!dmpReady) return;
   
-  // Read a packet from FIFO
-  if (accelgyro.dmpGetCurrentFIFOPacket(fifoBuffer)) { // Get the Latest packet
+  // Read latest packet from FIFO buffer
+  if (accelgyro.dmpGetCurrentFIFOPacket(fifoBuffer)) {
     
-    // Display Euler angles in degrees
+    // Obtain quaternion values from buffer
     accelgyro.dmpGetQuaternion(&q, fifoBuffer);
     accelgyro.dmpGetGravity(&gravity, &q);
+    
+    // Convert quaternion to ypr angles
     accelgyro.dmpGetYawPitchRoll(ypr, &q, &gravity);
 
-    // Convert Yaw, Pitch and Roll values from Radians to degrees
+    // Read raw accel/gyro measurements from device
+    accelgyro.getMotion6(&rawValue[0], &rawValue[1], &rawValue[2], &rawValue[3], &rawValue[4], &rawValue[5]);
+
+    // Printout raw accel/gyro measurements after sensor calibration
+    Serial.println("\nSensor values after calibration");
+    Serial.println("-------------------------------");
+    Serial.print("az: ");
+    Serial.print(rawValue[2]); Serial.print("\n");
+    Serial.print("gx: ");
+    Serial.print(rawValue[3]); Serial.print("\n");
+    Serial.print("gy: ");
+    Serial.print(rawValue[4]); Serial.print("\n");
+    Serial.print("gz: ");
+    Serial.print(rawValue[5]); Serial.print("\n"); 
+
+    // Convert Yaw, Pitch and Roll values from radians to degrees
     ypr[0] = ypr[0] * 180 / M_PI;
     ypr[1] = ypr[1] * 180 / M_PI;
     ypr[2] = ypr[2] * 180 / M_PI;
 
-    /* Map the MPU6050 movement to the angular movements of the servo motors. This mapping has to be done for the servos
+    /* Map the MPU6050 movement to the angular movements of the servo motors: -90 to 90 from the MPU6050 to 0 to 180 for the servos.
+
+     *  
+     *  This mapping has to be done for the servos
        to move in the opposite direction of the MPU6050 accelerometer motion, for each respective axis, to attempt
        stabilizing the gimbal platform. 
     */
