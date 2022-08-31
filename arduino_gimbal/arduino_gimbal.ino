@@ -145,11 +145,11 @@ void loop() {
     ypr[1] = ypr[1] * 180 / M_PI;
     ypr[2] = ypr[2] * 180 / M_PI;
 
-    /* Map the MPU6050 movement to the angular movements of the servo motors: -90 to 90 from the MPU6050 to 0 to 180 for the servos.
-
+    /* Map the MPU6050 movement to the angular movements of the servo motors: -90 to 90 degrees from the MPU6050 to 
+     *  0 to 180 for the servos.
      *  
      *  This mapping has to be done for the servos
-       to move in the opposite direction of the MPU6050 accelerometer motion, for each respective axis, to attempt
+       to move in the opposite direction of the MPU6050 orientation, for each respective axis, to attempt
        stabilizing the gimbal platform. 
     */
     int yawValue = map(ypr[0], -90, 90, 0, 180);            
