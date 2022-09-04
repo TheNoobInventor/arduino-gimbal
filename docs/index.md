@@ -413,7 +413,7 @@ With the MPU6050 board calibrated, outputting the raw sensor values should retur
 
 With the gimbal fully assembled and the MPU6050 calibrated, it's time to explain how all the components work together followed by the project demonstration.
 
-## Project working principle
+## Project Working Principle
 
 In summary, the main goal of this project is to stabilize a 3D printed gimbal platform by using an MPU6050 IMU sensor and 3 servo motors connected to an Arduino Nano. The gimbal has been assembled, the MPU6050 board calibrated, what remains is to illustrate how all these components work together to achieve the project's objective.
 
@@ -474,9 +474,11 @@ servoRoll.write(rollValue);
 
 The loop starts again by checking if the DMP is ready to be used and the subsequent steps outlined earlier are executed. This process continues until the switch is flipped to turn off the gimbal.
 
-## Video demonstration
+## Project Demonstration
 
-To be uploaded
+The following video walks through the setup procedure for this project.
+
+[<img src="images/thumbnail.png" width="50%">](https://youtu.be/COvEWFBLHkI)
 
 ## Recommendations
 
