@@ -375,9 +375,9 @@ But apparently the MPU6050 registers expect settings of ±1000dps and ±16G inst
 
 - The `isOffsetCalculated` boolean flag is set to `true` and the calculated offsets are printed out to the serial monitor. The screenshot below shows the output of running the offsets sketch,
 
-<p float="center">
-  <img title='Sample output 1' src=screenshots/offsets.png>
-</p>
+  <p float="center">
+    <img title='Sample output 1' src=screenshots/offsets.png>
+  </p>
 
 - While ensuring that the MPU6050 is flat and still, the offsets sketch is run multiple times until the outputted offsets settle around an acceptable range. For instance, ±5 for each of the calculated gyroscope offsets and ±100 for the calculated accelerometer offsets.
 
