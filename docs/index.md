@@ -316,7 +316,7 @@ The screenshots below show a sample of the different angle output options, from 
 </p>
 
 ### MPU6050 Offsets and Calibration
-Sensors are used to measure various physical quantities. As stated earlier, the MPU6050 sensor measures angular velocity and acceleration of an object or system it's mounted on or housed in. Ideally sensors are precise, to produce the same output for the same input, and able to reliably detect minor changes in the measured parameter. However, in the real world sensors aren't perfect. Even sensors produced by the same manufacturer aren't guaranteed to function uniformly; sensor tolerances, made available in datasheets by manufacturers, reflect this potential variation.
+Sensors are used to measure various physical quantities. As stated earlier, the MPU6050 sensor measures angular velocity and acceleration of an object or system it's mounted on or housed in. Ideally sensors are precise, produce the same output from the same input, and able to reliably detect minor changes in the measured parameter. However, in the real world sensors aren't perfect. Even sensors produced by the same manufacturer aren't guaranteed to function uniformly; sensor tolerances, made available in datasheets by manufacturers, reflect this potential variation.
 
 Placing an MPU6050 board still and horizontally flat, then reading the raw angular velocity and acceleration values will most likely output nonzero values instead of zeros as one might expect. These variations are called *sensor noise* and can be due to a multitude of factors. Nonetheless, it's much easier to filter out the noise by calibrating the sensor rather than correct each of these factors. 
 
