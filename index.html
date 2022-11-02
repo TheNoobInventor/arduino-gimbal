@@ -1,0 +1,1058 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://thenoobinventor.github.io/arduino-gimbal/index.html">
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.7">
+    
+    
+      
+        <title>Diy Arduino Gimbal</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.20d9efc8.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.815d1a91.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#diy-arduino-gimbal" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Diy Arduino Gimbal" class="md-header__button md-logo" aria-label="Diy Arduino Gimbal" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Diy Arduino Gimbal
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Diy Arduino Gimbal
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/TheNoobInventor/arduino-gimbal" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    TheNoobInventor/arduino-gimbal
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  <li class="md-tabs__item">
+    <a href="index.html" class="md-tabs__link md-tabs__link--active">
+      Diy Arduino Gimbal
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Diy Arduino Gimbal" class="md-nav__button md-logo" aria-label="Diy Arduino Gimbal" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Diy Arduino Gimbal
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/TheNoobInventor/arduino-gimbal" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    TheNoobInventor/arduino-gimbal
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Diy Arduino Gimbal
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
+        Diy Arduino Gimbal
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    Hardware
+  </a>
+  
+    <nav class="md-nav" aria-label="Hardware">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#components" class="md-nav__link">
+    Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project-wiring" class="md-nav__link">
+    Project Wiring
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assembly" class="md-nav__link">
+    Assembly
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-and-libraries" class="md-nav__link">
+    Software and libraries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mpu6050-board" class="md-nav__link">
+    MPU6050 board
+  </a>
+  
+    <nav class="md-nav" aria-label="MPU6050 board">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#three-dimensional-3d-rotations" class="md-nav__link">
+    Three Dimensional (3D) Rotations
+  </a>
+  
+    <nav class="md-nav" aria-label="Three Dimensional (3D) Rotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#three-angle-representation" class="md-nav__link">
+    Three-angle representation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quaternions" class="md-nav__link">
+    Quaternions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpu6050-angle-outputs" class="md-nav__link">
+    MPU6050 Angle Outputs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpu6050-offsets-and-calibration" class="md-nav__link">
+    MPU6050 Offsets and Calibration
+  </a>
+  
+    <nav class="md-nav" aria-label="MPU6050 Offsets and Calibration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculating-mpu6050-offsets" class="md-nav__link">
+    Calculating MPU6050 offsets
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mpu6050-calibration" class="md-nav__link">
+    MPU6050 Calibration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-working-principle" class="md-nav__link">
+    Project Working Principle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-demonstration" class="md-nav__link">
+    Project Demonstration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#recommendations" class="md-nav__link">
+    Recommendations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="diy-arduino-gimbal">Diy Arduino Gimbal</h1>
+<p>A 3D printed Do-It-Yourself (DIY) gimbal -- fitted with 3 FS90 Micro servo motors -- is controlled using an MPU6050 inertial measurement unit (IMU) sensor to keep the 3D printed platform stable during rotation in any axis. The servo motors and the IMU sensor are connected to the Arduino Nano microcontroller.</p>
+<h2 id="hardware">Hardware</h2>
+<h3 id="components">Components</h3>
+<p>The following components (and tools) were used in this project:</p>
+<ul>
+<li>
+<p>3D printed gimbal parts</p>
+</li>
+<li>
+<p>Arduino Nano (and usb cable)</p>
+</li>
+<li>
+<p>MPU6050 board</p>
+</li>
+<li>
+<p>3 x FS90 Micro servo motors</p>
+</li>
+<li>
+<p>LM2596 Buck Regulator</p>
+</li>
+<li>
+<p>9V battery and connector</p>
+</li>
+<li>
+<p>2.54 mm female and male headers</p>
+</li>
+<li>
+<p>Loose cables to solder on female/male headers</p>
+</li>
+<li>
+<p>Veroboard to solder on female headers (for the arduino nano and MPU6050) and
+male headers for the servo cables</p>
+</li>
+<li>
+<p>On/Off switch</p>
+</li>
+<li>
+<p>Soldering iron</p>
+</li>
+<li>
+<p>Screwdriver set</p>
+</li>
+<li>
+<p>Double sided tape</p>
+</li>
+<li>
+<p>Duck tape</p>
+</li>
+</ul>
+<h3 id="project-wiring">Project Wiring</h3>
+<p>The diagram below shows how the electronic components of the gimbal were connected.</p>
+<p align="center">
+  <img title='Wiring diagram' src=images/gimbal_wiring_diagram.png width="600">
+</p>
+
+<p>The 9V battery provides the power for the project and is connected to a buck/voltage regulator which steps down the voltage to 5V for the Arduino Nano. A switch is connected inline with the regulator and battery to open or close the circuit. </p>
+<p>The MPU6050 board pins were connected to the Arduino Nano pins as follows:</p>
+<table>
+<thead>
+<tr>
+<th>MPU6050 board</th>
+<th>Arduino Nano board</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VCC</td>
+<td>5V</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>GND</td>
+</tr>
+<tr>
+<td>SCL</td>
+<td>A5</td>
+</tr>
+<tr>
+<td>SDA</td>
+<td>A4</td>
+</tr>
+<tr>
+<td>INT</td>
+<td>D2</td>
+</tr>
+</tbody>
+</table>
+<p>The pair of analog pins, A4 and A5, on the Nano are usually used for I2C communications according to the board <a href="https://docs.arduino.cc/hardware/nano">pinout</a>. Hence, pins A4 and A5 are connected to SDA and SCL on the MPU6050 board respectively. The external interrupt pin of the MPU6050 is connected to the D2 digital pin.</p>
+<p>The signal cable of the servo motors are connected to the Nano as follows:</p>
+<table>
+<thead>
+<tr>
+<th>Servo</th>
+<th>Arduino Nano board</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Roll</td>
+<td>D4</td>
+</tr>
+<tr>
+<td>Pitch</td>
+<td>D5</td>
+</tr>
+<tr>
+<td>Yaw</td>
+<td>D10</td>
+</tr>
+</tbody>
+</table>
+<h3 id="assembly">Assembly</h3>
+<p>The physical parts of the gimbal: the platform, servo housings and the main body were 3D printed. The STL files used to 3D print the project parts can be found <a href="https://drive.google.com/file/d/1nKLQ7iNL-5FeuZThrUJ0UgsAtbLwWR5H/view?usp=sharing">here</a> from Make It Smart and are also provided in the project repository. </p>
+<p align="center">
+  <img title='Components' src=images/components.png width="600">
+</p>
+
+<p>The Nano and MPU6050 boards were attached to a breadboard using female headers. The servo motors were connected to the Nano via male headers soldered onto the breadboard (to the left of the Nano in the image below). The signal, ground and vcc connections were soldered underneath the breadboard to the corresponding pins on the Nano. </p>
+<p>An extra column of headers was attached for debugging power and ground connections. </p>
+<p align="center">
+  <img title='Boards closeup' src=images/boards_closeup.png width="600">
+</p>
+
+<p>The black and red wires shown are connected to the ground and the voltage output from the buck regulator. The idea behind this connection and assembly is again attributed to <a href="https://www.youtube.com/watch?v=1aRJvid5Ib4">Make It Smart</a>. The servos are attached to the servo housings with screws, the double sided tape is used to attach the breadboard securely in the gimbal body and to insulate connections from possible short circuits. </p>
+<p>The fully assembled gimbal is shown in the pictures below.</p>
+<p align="center">
+  <img title='Assembled front' src=images/assembled_front.png width="600">
+  <img title='Assembled side' src=images/assembled_side.png width="600">
+  <img title='Assembled top' src=images/assembled_top.png width="600">
+</p>
+
+<h2 id="software-and-libraries">Software and libraries</h2>
+<p>The <a href="https://www.arduino.cc/en/software">Arduino IDE</a> was used in programming this project. The <a href="https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/I2Cdev">i2cdevlib</a> and <a href="https://github.com/jrowberg/i2cdevlib/tree/master/Arduino/MPU6050">MPU6050</a> libraries by Jeff Rowberg were the main libraries utilized in this project. These libraries can be installed by importing them into the Arduino IDE as explained in the <a href="https://github.com/jrowberg/i2cdevlib">README</a> of the repository; this <a href="https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries">guide</a> can also be instructional for the installation process. </p>
+<h2 id="mpu6050-board">MPU6050 board</h2>
+<p>The MPU6050 board, shown below, is a Micro Electro-Mechanical System (MEMS) which consists of a 3-axis gyroscope -- to measure angular velocity -- and a 3-axis accelerometer, to measure acceleration. The board is also called an <em>Inertial Measurement Unit (IMU)</em> which provides a 6-degree of freedom system for motion tracking and measures velocity, orientation, acceleration, displacement and other motion related parameters. </p>
+<p align="center">
+  <img title='MPU6050' src=images/mpu6050.JPG width="600">
+</p>
+
+<p>The pinout of the MPU6050 is shown below:</p>
+<table>
+<thead>
+<tr>
+<th>Pin</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VCC</td>
+<td>3 - 5V</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>Ground</td>
+</tr>
+<tr>
+<td>SCL</td>
+<td>Serial Clock</td>
+</tr>
+<tr>
+<td>SDA</td>
+<td>Serial Data</td>
+</tr>
+<tr>
+<td>XDA</td>
+<td>Auxiliary Serial Data</td>
+</tr>
+<tr>
+<td>XCL</td>
+<td>Auxiliary Serial Clock</td>
+</tr>
+<tr>
+<td>ADD</td>
+<td>I2C address select</td>
+</tr>
+<tr>
+<td>INT</td>
+<td>Interrupt</td>
+</tr>
+</tbody>
+</table>
+<p>Other features of the board are as follows:</p>
+<ul>
+<li>In-built Digital Motion Processor (DMP) provides high computational power for complex calculations</li>
+<li>In-built 16-bit ADC provides high accuracy</li>
+<li>Uses an Inter-Integrated Circuit (I2C) module to interface with devices like an Arduino using the I2C protocol</li>
+<li>3-axis gyroscope (angular rate sensor) with a sensitivity up to 131 LSBs/dps and a full-scale range of ±250, ±500, ±1000, and ±2000dps</li>
+<li>3-axis accelerometer with a programmable full scale range of ±2g, ±4g, ±8g and ±16g</li>
+<li>In-built temperature sensor</li>
+</ul>
+<p>Additional features and specifications can be found in the <a href="https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Datasheet1.pdf">MPU6050 datasheet</a>.</p>
+<p>The I2C protocol is used to interface the MPU6050 module with the Arduino Nano. Jeff Rowberg's library employs the Arduino <a href="https://www.arduino.cc/reference/en/language/functions/communication/wire/">Wire library</a> used to enable communication between I2C devices. </p>
+<p>Some applications of the MPU6050 board include the following:</p>
+<ul>
+<li>IMU Measurement</li>
+<li>Drones/quadcopters</li>
+<li>Robotic arm controls and</li>
+<li>Self balancing robots</li>
+</ul>
+<p>As stated earlier, the MPU6050 board is employed to balance the gimbal platform, how this works will elaborated on in a subsequent subsection. </p>
+<h3 id="three-dimensional-3d-rotations">Three Dimensional (3D) Rotations</h3>
+<p>Before delving further into the project, it's essential to gain some understanding of the fundamentals of rotations in 3D space. </p>
+<p>Firstly, the terms <em>orientation</em> and <em>rotation</em> have to be defined. Orientation can be defined as the current angular position of an object, while rotation is the operation or action that changes the object's orientation. </p>
+<p>Typically, coordinate frames are used in representing 3D orientation and rotations of an object. This is necessary so that the object has a reference in the real world (in relation to itself) to locate itself, avoid obstacles and more. In a simplified instance, there is a coordinate frame on the object (consider the yellow ball in the figure below), usually known as the body-fixed frame, <strong><em>B</em></strong>, and a reference frame commonly known as the world/earth-fixed frame, <strong><em>W</em></strong>. With two coordinate frames, parameters that are measured or observed in the world-fixed frame can be related in the body-fixed frame and vice versa.</p>
+<p align="center">
+  <img title='Frames' src=images/coordinate_frames.jpg width="600">
+</p>
+
+<p>The common methods of representing 3D rotations are:</p>
+<ul>
+<li>Three-angle representation</li>
+<li>Axis angle and</li>
+<li>Quaternions</li>
+</ul>
+<p>For brevity, only the three-angle representation and quaternions will be considered here.</p>
+<h4 id="three-angle-representation">Three-angle representation</h4>
+<p>As the name implies, in this method, the orientation and rotation of an object in 3D space is represented using three angles namely: <strong>𝜃</strong> (for rotation around the z-axis), <strong>𝜙</strong> (for rotation around the y-axis), and <strong>𝜓</strong> (for rotation around the x-axis). These angles are known as <strong>Euler angles</strong> with the direction of the axes determined by the <a href="https://en.wikipedia.org/wiki/Right-hand_rule#Coordinates">right-hand rule convention</a>. </p>
+<p>Rotations using the three-angle representation method can be carried out in two ways:</p>
+<ul>
+<li>Euler rotation sequence or</li>
+<li>Cardan rotation sequence. </li>
+</ul>
+<p>In the Euler rotation sequence, rotation occurs about two axes but no successive rotation about the same axis: <em>XYX</em>, <em>YXY</em>, <em>YZY</em>, <em>ZYZ</em>, <em>XZX</em>, and <em>ZXZ</em>.</p>
+<p>However, in the Cardan rotation sequence, rotation occurs about all three axes: <em>XYZ</em>, <em>XZY</em>, <em>YXZ</em>, <em>YZX</em>, <em>ZYX</em>, <em>ZXY</em>. Sometimes Cardan rotation sequences are considered as a more specific case of Euler rotation sequences -- effectively categorizing all sequences as Euler rotation sequences. Another point to note is that the rotation sequences are non-commutative, meaning sequence <em>XYZ</em> ≠ <em>ZYX</em>.</p>
+<p align="center">
+  <img title='Cardan Rotation' src=images/cardan_rotation.png width="600">
+</p>
+
+<p><em>ZYX Cardan rotation sequence (from <a href="http://theory.frydom.org/src/multibody_dynamics/frame.html#diebel">FRyDOM</a>)</em></p>
+<p>In the above rotation sequence, the first rotation of angle, 𝜓, is about the <em>z-axis</em>, the second rotation of angle, 𝜃, is about the <em>y<sup>'</sup><sup>'</sup><sup>'</sup>- axis</em> with the final rotation of angle, 𝜙, about the <em>x<sup>'</sup><sup>'</sup>-axis</em>. This sequence is implemented with the use of rotation matrices. Each rotation in the sequence is expressed as a rotation matrix and the matrix multiplication of the three rotation matrices results in the new orientation, <em>x<sup>'</sup><sup>'</sup><sup>'</sup>y<sup>'</sup><sup>'</sup><sup>'</sup>z<sup>'</sup><sup>'</sup><sup>'</sup></em>.</p>
+<p>Consider the following <a href="https://en.wikipedia.org/wiki/Rotation_matrix#General_rotations">instance</a>, </p>
+<p align="center">
+  <img title='Rotation matrix' src=images/rotation_matrix.jpg>
+</p>
+
+<p>The rotation sequence is ZYX as shown by the matrix multiplication of the matrices <em>R<sub>z</sub></em> with angle 𝛼 (yaw), <em>R<sub>y</sub></em>, with angle 𝛽 (pitch), and <em>R<sub>x</sub></em> with angle 𝛾 (roll). <em>R</em> is the product of the rotation matrices. </p>
+<p>The three-angle representation is a consequence of the Euler's rotation theorem which states:</p>
+<blockquote>
+<p>Any two independent orthonormal coordinate frames can be a sequence of rotations(not more than three) about coordinate axes, where no two successive rotations may be about the same axis.</p>
+</blockquote>
+<p>Representing 3D rotations in this format is natural and intuitive, however, this format runs into the problem of gimbal lock where one degree of freedom is lost because two of the three coordinate axes are parallely aligned at certain points. Considering a rotation sequence of <em>ZYX</em>, rotating the y-axis by ±90 degrees (or any multiples of 90) will cause the outer axes of the sequence, z-axis and x-axis, to be aligned and rotation about these axes will have the same effect; eseentially, rotations about these axes are indistinguisable. This problem can be viewed <a href="https://www.youtube.com/watch?v=mcDHDfK2pXs">graphically</a> and proven <a href="https://en.wikipedia.org/wiki/Gimbal_lock">mathematically</a> as well. Gimbal lock is avoided by making use of quaternions.</p>
+<h4 id="quaternions">Quaternions</h4>
+<p>Quaternions are another way of representing 3D rotations and orientation and are a 4-dimensional extension of the complex numbers as shown:</p>
+<p align='center'>
+s + v<sub>1</sub>i + v<sub>2</sub>j + v<sub>3</sub>k
+</p>
+
+<p>where <em>s</em>, <em>v<sub>1</sub></em>, <em>v<sub>2</sub></em>, and <em>v<sub>3</sub></em> are real numbers and <em>i</em>, <em>j</em> and <em>k</em> are unit vectors. There are different notations for the real numbers depending on the application, programming language or literature in use. Some of these notations are as follows, </p>
+<p align='center'>
+s = q<sub>0</sub> = q<sub>1</sub> = w<br>
+v<sub>1</sub> = q<sub>1</sub> = q<sub>2</sub> = x<br>
+v<sub>2</sub> = q<sub>2</sub> = q<sub>3</sub> = y<br>
+v<sub>3</sub> = q<sub>3</sub> = q<sub>4</sub> = z
+</p>
+
+<p>Quaternions are sometimes simplified as:</p>
+<p align='center'>
+q = [s &ensp; v]
+</p>
+
+<p>Where <em>s</em> is the scalar part and <em>v</em> is the vector part.</p>
+<p>To represent rotations and orientations in three dimensions, <em>unit quaternions</em> are used. They're of the form,  </p>
+<p align='center'>
+q = [s &ensp; v] = [cos(𝜃/2) &ensp;<strong>v</strong>sin(𝜃/2)]
+</p>
+
+<p>Where <strong>v</strong> is a unit vector that defines an axis of rotation and 𝜃 is the amount of rotation about this axis. Unit quaternions have a magnitude have a magnitude of 1,</p>
+<p align='center'>
+∥q∥ = 1
+</p>
+
+<p>Recall from trigonometry that,</p>
+<p align='center'>
+cos(𝜃)<sup>2</sup> + sin(𝜃)<sup>2</sup> = 1
+</p>
+
+<p>Unit quaternions can be represented visually as shown below courtesy of 
+<a href="https://mjwhite8119.github.io/Robots/mpu6050">Martin White</a> which is juxtaposed with the Yaw, Pitch and Roll angles. In the image, the red arrow is the unit vector given as sines and the grey arrow is the rotation about the vector.</p>
+<p align="center">
+  <img title='Quaternion' src=images/quaternion.jpeg>
+</p>
+
+<p>Suppose there exists a point <em>p</em> in 3D space (<em>x, y, z</em>) to be rotated about a unit vector axis of rotation, <em>v</em>, with an angle, 𝜃. Rotation is carried about by the quaternion multiplication, </p>
+<p align='center'>
+<strong>qpq<sup>-1</sup></strong>
+</p>
+
+<p>Where <em>q<sup>-1</sup></em> is the inverse of the unit quaternion <em>q</em> and <em>p</em> is expressed in quaternion format as [0, (<em>x, y, z</em>)]. This quaternion multiplication is also applicable to rotation between coordinate frames.</p>
+<p>Quaternions can be complicated to understand compared to the more intuitive three-angle representation previously discussed and only the basics have been considered here but for more information on fundamentals of quaternions, derivations of quaternion properties and visual representation the <a href="https://www.amazon.com/Math-Primer-Graphics-Game-Development-ebook/dp/B008KZU548">references</a>, <a href="https://eater.net/quaternions">here</a>, <a href="https://www.youtube.com/watch?v=jTgdKoQv738">here</a> and <a href="https://www.youtube.com/watch?v=mHVwd8gYLnI">here</a> are great places to start.</p>
+<p>Despite the relative steep learning curve, quaternions are simpler to compose, more numerically stable and more efficient than other methods of 3D representation. They're utilized in computer graphics, computer vision, robotics, navigation, flight dynamics, orbital mechanics of satellites and more.</p>
+<h3 id="mpu6050-angle-outputs">MPU6050 Angle Outputs</h3>
+<p>The Digital Motion Processor (DMP) offloads processing that would normally have to take place on the microprocessor. It maintains an internal First-In-First-Out (FIFO) buffer
+which fuses the accelerometer and gyroscope data together to minimize the effects of errors inherent in each sensor. The DMP computes the results in terms of quaternions, and can convert the results to Euler or Yaw-Pitch-Roll (YPR) angles and is able to perform other computations with the data as well. </p>
+<p>The image below, made available again courtesy of <a href="https://mjwhite8119.github.io/Robots/mpu6050">Martin White</a>, shows the format of the DMP FIFO buffer. </p>
+<p align="center">
+  <img title='MPU6050 FIFO Buffer' src=images/fifo_buffer.jpeg width="600">
+</p>
+
+<p>The following lines of code, in the <code>MPU6050_DMP6.ino</code> sample file of Jeff Rowberg's library, confirm the different angle options outputted by the DMP (at the time of this write-up),</p>
+<pre><code>if (mpu.dmpGetCurrentFIFOPacket(fifoBuffer)) { // Get the Latest packet 
+    #ifdef OUTPUT_READABLE_QUATERNION
+        // display quaternion values in easy matrix form: w x y z
+        mpu.dmpGetQuaternion(&amp;q, fifoBuffer);
+        Serial.print(&quot;quat\t&quot;);
+        Serial.print(q.w);
+        Serial.print(&quot;\t&quot;);
+        Serial.print(q.x);
+        Serial.print(&quot;\t&quot;);
+        Serial.print(q.y);
+        Serial.print(&quot;\t&quot;);
+        Serial.println(q.z);
+    #endif
+
+    #ifdef OUTPUT_READABLE_EULER
+        // display Euler angles in degrees
+        mpu.dmpGetQuaternion(&amp;q, fifoBuffer);
+        mpu.dmpGetEuler(euler, &amp;q);
+        Serial.print(&quot;euler\t&quot;);
+        Serial.print(euler[0] * 180/M_PI);
+        Serial.print(&quot;\t&quot;);
+        Serial.print(euler[1] * 180/M_PI);
+        Serial.print(&quot;\t&quot;);
+        Serial.println(euler[2] * 180/M_PI);
+    #endif
+
+    #ifdef OUTPUT_READABLE_YAWPITCHROLL
+        // display Yaw/Pitch/Roll angles in degrees
+        mpu.dmpGetQuaternion(&amp;q, fifoBuffer);
+        mpu.dmpGetGravity(&amp;gravity, &amp;q);
+        mpu.dmpGetYawPitchRoll(ypr, &amp;q, &amp;gravity);
+        Serial.print(&quot;ypr\t&quot;);
+        Serial.print(ypr[0] * 180/M_PI);
+        Serial.print(&quot;\t&quot;);
+        Serial.print(ypr[1] * 180/M_PI);
+        Serial.print(&quot;\t&quot;);
+        Serial.println(ypr[2] * 180/M_PI);
+    #endif
+</code></pre>
+<p>The latest data packet of the MPU6050 board is read from the buffer variable, <code>fifoBuffer</code> as shown in the first line of the block of code above. The quaternion values are obtained from this variable and the other output methods -- Euler and Yaw-Pitch-Roll angles -- are calculated from the quaternion readings.</p>
+<p>It was difficult to ascertain the rotation sequence of the Euler angle option. However, this option specifies pure change in orientation without regard to gravity. </p>
+<p>The YPR output option is equivalent to implementing a ZYX Cardan rotation sequence, which can be confirmed by the <code>dmpGetYawPitchRoll()</code> function definition in the <code>MPU6050_6Axis_MotionApps20.cpp</code> file (at the time of this write-up) of the MPU6050 library. This option is best suited for this project the underlying rotation sequence involves rotation about all three axes. Furthermore, the individual axes can be mapped directly to a respective servo motor: one motor for the z-axis, one for the y-axis and one for the x-axis; this mapping will be elaborated on in a later subsection. Additionally, the gimbal platform won't be rotated by more than ±90 degrees therefore gimbal lock won't be encountered. </p>
+<p>The screenshots below show a sample of the different angle output options, from the MPU6050, observed in the Arduino IDE serial monitor.</p>
+<p float="center">
+  <img title='Sample output 1' src=screenshots/sample_output_1.png>
+  <img title='Sample output 2' src=screenshots/sample_output_2.png>
+</p>
+
+<h3 id="mpu6050-offsets-and-calibration">MPU6050 Offsets and Calibration</h3>
+<p>Sensors are used to measure various physical quantities. As stated earlier, the MPU6050 sensor measures angular velocity and acceleration of an object or system it's mounted on or housed in. Ideally sensors are precise, produce the same output from the same input, and able to reliably detect minor changes in the measured parameter. However, in the real world sensors aren't perfect. Even sensors produced by the same manufacturer aren't guaranteed to function uniformly; sensor tolerances, made available in datasheets by manufacturers, reflect this potential variation.</p>
+<p>Placing an MPU6050 board still and horizontally flat, then reading the raw angular velocity and acceleration values will most likely output nonzero values instead of zeros as one might expect. These variations are called <em>sensor noise</em> and can be due to a multitude of factors. Nonetheless, it's much easier to filter out the noise by calibrating the sensor rather than correct each of these factors. </p>
+<p>The observed nonzero values are known as the <em>sensor offsets</em>. But before filtering out these offsets, they need to be scaled appropriately to the desired sensor sensitivity. The subsequent subsection details the process of calculating the sensor offsets while accounting for this sensitivity.</p>
+<h4 id="calculating-mpu6050-offsets">Calculating MPU6050 offsets</h4>
+<p>The steps for calculating the MPU6050 board offsets were mainly obtained from the forum post <a href="https://www.i2cdevlib.com/forums/topic/91-how-to-decide-gyro-and-accelerometer-offsett/">here</a> and modified for this project. The two main steps needed to calculate the offsets are as follows, </p>
+<ul>
+<li>
+<p>Connect the MPU6050 to an Arduino and place it on a flat and horizontal surface; an inclinometer can be used to check that the sensor is as horizontal as possible. In this project case, the headers that the MPU6050 board is connected to should be checked to ensure a horizontal position for the board.</p>
+</li>
+<li>
+<p>Secondly, upload the <code>mpu6050_offsets.ino</code> sketch, available in this project directory, to the Arduino. The <code>mpu6050_offsets.ino</code> sketch is a modification of <code>MPU6050_raw.ino</code> example file from the MPU6050 library used to generate offsets. </p>
+</li>
+</ul>
+<p>The <code>mpu6050_offsets.ino</code> sketch is well documented and only the significant parts of the code will be considered to demonstrate the sensor offsets calculation.</p>
+<ul>
+<li>Firstly, all gyroscope and accelerometer offsets are set to 0. This is done inside the <code>setoffsetValues()</code> function where the <code>calculatedOffset[]</code> array contains zero elements before calculations are made. </li>
+</ul>
+<pre><code>// Set sensor offset values to those of the calculatedOffset array.
+accelgyro.setXAccelOffset(calculatedOffset[0]);
+accelgyro.setYAccelOffset(calculatedOffset[1]);
+accelgyro.setZAccelOffset(calculatedOffset[2]);
+accelgyro.setXGyroOffset(calculatedOffset[3]);
+accelgyro.setYGyroOffset(calculatedOffset[4]); 
+accelgyro.setZGyroOffset(calculatedOffset[5]); 
+</code></pre>
+<ul>
+<li>Then the <code>calculateOffsets()</code> function is recursively called until 30 raw readings of the gyroscope and accelerometer are added up. </li>
+</ul>
+<pre><code>// Read raw accel/gyro measurements from device
+accelgyro.getMotion6(&amp;rawValue[0], &amp;rawValue[1], &amp;rawValue[2], &amp;rawValue[3], &amp;rawValue[4], &amp;rawValue[5]);
+
+// Sum raw sensor values over 30 readings
+// 30 was chosen so that the total obtained is in the short int (int16_t) range.
+if(counter &lt; 30){
+  for(int i = 0; i&lt;6; i++){
+    totalRawValue[i] = totalRawValue[i] + rawValue[i];
+    }   
+    counter ++;
+    return calculateOffsets();
+}
+</code></pre>
+<ul>
+<li>
+<p>The number 30 was chosen so that the total obtained falls in the short int (<code>int16_t</code>) range: <strong>-32,768</strong> to <strong>32,767</strong>. <code>int16_t</code> is the data type used in the <code>MPU6050.cpp</code> file, of the MPU6050 library, for the offset function arguments, like <code>void MPU6050_Base::setXGyroOffset(int16_t offset){}</code> for example, and was chosen here for compatibility. Additionally, the <code>getMotion6()</code> function, used to read the raw sensor measurements, has <code>int16_t</code> as the data type of its arguments.</p>
+</li>
+<li>
+<p>The average values of the total raw readings after 30 readings. Next the offsets were computed as follows,</p>
+</li>
+</ul>
+<pre><code>// Calculate offsets for each sensor axis: ax, ay, az, gx, gy, gz respectively.
+calculatedOffset[1] = -averageRawValue[0] / 8;
+calculatedOffset[0] = -averageRawValue[1] / 8;
+calculatedOffset[2] = (16384 - averageRawValue[2])/ 8;
+calculatedOffset[3] = -averageRawValue[3] / 4;
+calculatedOffset[4] = -averageRawValue[4] / 4;
+calculatedOffset[5] = -averageRawValue[5] / 4;
+</code></pre>
+<p>The above expressions were obtained from this <a href="https://forum.arduino.cc/t/calculating-offsets-for-mpu6050-gyro/514661/2">forum post</a>. There, it can be seen that the MPU6050 board is initialized at its most sensitive setting of ±250dps and ±2G for the gyroscope and accelerometer respectively -- this can be confirmed by looking at <code>void MPU6050_Base::initialize()</code> in <code>MPU6050.cpp</code>. In this mode, all gyroscope readings, x and y acceleromter readings are expected to be 0 while the z accelerometer is supposed to measure 1G (g-force) due to acceleration by gravity; which equates to +16384 according to page 29 of the <a href="https://invensense.tdk.com/wp-content/uploads/2015/02/MPU-6000-Register-Map1.pdf">MPU6050 register map and descriptions document</a>. Furthermore, at this setting, the MPU6050 can only read a maximum of ±2G. So with an expected value of +16384, multiplying this by 2 equals 32768 which justifies the short int data type.</p>
+<p>But apparently the MPU6050 registers expect settings of ±1000dps and ±16G instead. Therefore the gyroscope and accelerometer sensitivity settings are scaled as 1000dps/4 to 250dps and 16G/8 to 2G respectively.</p>
+<ul>
+<li>The <code>isOffsetCalculated</code> boolean flag is set to <code>true</code> and the calculated offsets are printed out to the serial monitor. The screenshot below shows the output of running the offsets sketch,</li>
+</ul>
+<p float="center">
+    <img title='Sample output 1' src=screenshots/offsets.png>
+  </p>
+
+<ul>
+<li>
+<p>While ensuring that the MPU6050 is flat and still, the offsets sketch is run multiple times until the outputted offsets settle around an acceptable range. For instance, ±5 for each of the calculated gyroscope offsets and ±100 for the calculated accelerometer offsets.</p>
+</li>
+<li>
+<p>Once this is achieved, write down the offset values as these will be used in the <code>arduino_gimbal.ino</code> file for calibration purposes.</p>
+</li>
+</ul>
+<p>This offsets generating procedure has to be repeated for every new MPU6050 sensor to be used.</p>
+<h4 id="mpu6050-calibration">MPU6050 Calibration</h4>
+<p>The main project sketch, <code>arduino_gimbal.ino</code>, is uploaded to the Arduino to calibrate the MPU6050. The offsets obtained from <code>mpu6050_offsets.ino</code> are passed into the following functions in <code>arduino_gimbal.ino</code>, as shown below,</p>
+<pre><code>// Set device offsets obtained from mpu6050_offsets.ino sketch
+accelgyro.setXGyroOffset(-199);
+accelgyro.setYGyroOffset(-97); 
+accelgyro.setZGyroOffset(-49); 
+accelgyro.setZAccelOffset(1914); 
+</code></pre>
+<p>This <code>arduino_gimbal.ino</code> adapts the sketch by <a href="https://drive.google.com/drive/folders/1LwJicFGIrrpc4hXzEArIrGKUzwL2-6gj">Make It Smart</a> and sample code in <code>MPU6050_DMP6.ino</code> which only sets the Z-axis accelerometer offset and the gyroscope offsets and is suitable for the objectives of this project. </p>
+<p>The MPU6050 is calibrated with inbuilt functions to filter out these offsets in the following code block,</p>
+<pre><code>// Calibrate and fine tune MPU6050 with the offsets set above
+accelgyro.CalibrateAccel(6);
+accelgyro.CalibrateGyro(6);
+</code></pre>
+<p>At the time of this writeup, the functions <code>CalibrateGyro()</code> and <code>CalibrateAccel()</code> both employ a Proportional Integral Derivative (PID) controller for calibration. This can be confirmed in <code>MPU6050.cpp</code>.</p>
+<p>With the MPU6050 board calibrated, outputting the raw sensor values should return close to 0 for each gyroscope axis and +16384 for the z accelerometer (as explained in the previous subsection). The screenshot below shows the calibrated sensor values. Tolerances of ±5 for the gyroscope values and ±100 for the z accelerometer were deemed suitable for this project.  </p>
+<p float="center">
+  <img title='Sample output 1' src=screenshots/calibrated_values.png>
+</p>
+
+<p>With the gimbal fully assembled and the MPU6050 calibrated, it's time to explain how all the components work together followed by the project demonstration.</p>
+<h2 id="project-working-principle">Project Working Principle</h2>
+<p>In summary, the main goal of this project is to stabilize a 3D printed gimbal platform by using an MPU6050 IMU sensor and 3 servo motors connected to an Arduino Nano. The gimbal has been assembled, the MPU6050 board calibrated, what remains is to illustrate how all these components work together to achieve the project's objective.</p>
+<p>Firstly, it's ensured that the fitted servo motors are correctly connected to the gimbal. After running the <code>arduino_gimbal.ino</code> to calibrate the MPU6050 board using offsets obtained from <code>mpu6050_offsets.ino</code>, it was noticed that plastic gear of the servo motors were positioned at angles that skewed the gimbal platform off horizontally. Disconnecting the USB cable to power the gimbal off the 9V battery, to fix this misalignment, the plastic gears were unscrewed and adjusted until the platform was horizontally flat and facing the direction (shown in the image below), then fastened again.</p>
+<p align="center">
+  <img title='Assembled front' src=images/assembled_front_labelled.jpg width="500">
+</p>
+
+<p>This is the expected position of the gimbal when it's powered on and stationary. The axis of rotation of the servo motors are also labelled in the image above.</p>
+<p>As stated earlier, <code>arduino_gimbal.ino</code> is the main sketch for this project. It's well documented therefore, the high level flow chart below will be employed in describing how the project works. </p>
+<p align="center">
+  <img title='Gimbal flow chart' src=images/gimbal_flowchart.jpg width="600">
+</p>
+
+<p>The sketch starts out by declaring required variables, setting up the interrupt detection needed to notify the MPU6050 sensor when new data is available, and initializing the device, the Wire library and serial communication. After a connection has been established with the device, the board is calibrated with offsets obtained from <code>mpu6050_offsets.ino</code>. </p>
+<p>Next, the DMP is enabled. Recall that the DMP maintains an internal FIFO buffer which contains quaternion, gyroscope and accelerometer data. Then the interrupt is enabled and the servo motors are attached to respective digital pins. Afterward, the status of the DMP is checked to confirm if it's ready to be used in the main loop; if it isn't, the sketch is stopped.</p>
+<p>Once the DMP is confirmed to be available, new data packet from the FIFO buffer is read in. From this packet, quaternion values are obtained and from the quaternion values, ypr angles are calculated. The servo motors require angles in degrees, thus, the ypr values are converted to degrees from radians. These steps are executed in the following block of code,</p>
+<pre><code>// Obtain quaternion values from buffer
+accelgyro.dmpGetQuaternion(&amp;q, fifoBuffer);
+accelgyro.dmpGetGravity(&amp;gravity, &amp;q);
+
+// Convert quaternion to ypr angles
+accelgyro.dmpGetYawPitchRoll(ypr, &amp;q, &amp;gravity);
+
+// Convert Yaw, Pitch and Roll values from radians to degrees
+ypr[0] = ypr[0] * 180 / M_PI;
+ypr[1] = ypr[1] * 180 / M_PI;
+ypr[2] = ypr[2] * 180 / M_PI;
+</code></pre>
+<p>Finally, these ypr values are mapped to the servo movements to stabilize the gimbal platform. The mapping is done in such a way that the servo motors move in the opposite direction to the orientation calculated by the MPU6050 board. For instance, if the gimbal is held and tilted towards the left, the mapped angles written to the pitch servo motor produces rotation to the right to counteract this tilt and keep the gimbal platform horizontal. </p>
+<p>The three servo motors work in concert in a similar manner to balance the gimbal platform. The pitch and roll servo motors are mapped - 90 to 90 degrees to 180 to 0 degrees while the yaw servo motor is mapped to 0 to 180 degrees. If the servo motor moves in the same direction the gimbal is moved, the erring servo motor will need to have these mappings reversed. The mappings are shown in the block of code below,</p>
+<pre><code>/* Map the MPU6050 movement to the angular movements of the servo motors: -90 to 90 degrees from the MPU6050 to 
+* 0 to 180 for the servos.
+*  
+* This mapping has to be done for the servos to move in the opposite direction of the MPU6050 orientation, 
+* for each respective axis, to attempt stabilizing the gimbal platform. 
+*/
+
+int yawValue = map(ypr[0], -90, 90, 0, 180);            
+int pitchValue = map(ypr[1], -90, 90, 180, 0);            
+int rollValue = map(ypr[2], -90, 90, 180, 0);
+
+// Control servos according to the MPU6050 orientation
+servoYaw.write(yawValue);
+servoPitch.write(pitchValue);
+servoRoll.write(rollValue);
+</code></pre>
+<p>The loop starts again by checking if the DMP is ready to be used and the subsequent steps outlined earlier are executed. This process continues until the switch is flipped to turn off the gimbal.</p>
+<h2 id="project-demonstration">Project Demonstration</h2>
+<p>The following video walks through the setup procedure for this project.</p>
+<p><a href="https://youtu.be/COvEWFBLHkI"><img src="images/thumbnail.png" width="50%"></a></p>
+<h2 id="recommendations">Recommendations</h2>
+<p>The main recommendations relate to ways to improve assembling the project. These include:</p>
+<ul>
+<li>Using a smaller buck or voltage regulator. The buck regulator used here barely fit into the gimbal body for the electronic components.</li>
+<li>Using a smaller battery, like a Lithium Ion Polymer (Lipo) battery, to reduce the space occupied by the battery in the body. </li>
+</ul>
+<p>Another suggestion would be to explore connecting the external battery power (within a range of <a href="https://docs.arduino.cc/hardware/nano">7-12V</a>) directly to the Vin pin of the Arduino Nano, thus relying on the internal 5V regulator instead. If feasible, this eliminates the need for an external buck regulator thereby making the gimbal body more spacious.</p>
+<h2 id="references">References</h2>
+<ul>
+<li>
+<p><a href="https://www.i2cdevlib.com">Additional information on i2cdevlib</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=1aRJvid5Ib4">Make It Smart - 3 Axis Gimbal With Arduino Nano and MPU6050 Gyro Sensor</a></p>
+</li>
+<li>
+<p><a href="https://embeddedinventor.com/what-is-an-imu-sensor-a-complete-guide-for-beginners/">Beginner's guide to IMU</a></p>
+</li>
+<li>
+<p><a href="https://www.teachmemicro.com/orientation-arduino-mpu6050/">Get Orientation with Arduino and MPU6050</a></p>
+</li>
+<li>
+<p><a href="https://www.electronicsforu.com/electronics-projects/hardware-diy/simple-self-stabilization-system-using-arduino">Stabilization with Arduino and MPU6050</a></p>
+</li>
+<li>
+<p><a href="https://www.i2cdevlib.com/forums/topic/91-how-to-decide-gyro-and-accelerometer-offsett/">Decide gyro and accelerometer offset</a></p>
+</li>
+<li>
+<p><a href="https://www.udemy.com/course/ros-navigation/">ROS for Beginners II: Localization, Navigation and SLAM</a></p>
+</li>
+<li>
+<p><a href="https://mjwhite8119.github.io/Robots/mpu6050">The MPU6050 Explained</a></p>
+</li>
+<li>
+<p><a href="https://www.geekmomprojects.com/mpu-6050-dmp-data-from-i2cdevlib/">MPU-6050: DMP Data from i2cdevlib</a></p>
+</li>
+<li>
+<p><a href="https://forum.arduino.cc/t/calculating-offsets-for-mpu6050-gyro/514661/2">Offset calculations</a></p>
+</li>
+<li>
+<p><a href="https://components101.com/sensors/mpu6050-module">MPU6050 Accelerometer and Gyroscope board</a></p>
+</li>
+<li>
+<p><a href="https://www.euclideanspace.com/maths/geometry/rotations/index.htm">3D Rotations</a></p>
+</li>
+<li>
+<p><a href="https://learn.adafruit.com/calibrating-sensors?view=all">Calibrating sensors</a></p>
+</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "toc.integrate"], "search": "assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.8492ddcf.min.js"></script>
+      
+    
+  </body>
+</html>
